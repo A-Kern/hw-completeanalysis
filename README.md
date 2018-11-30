@@ -55,6 +55,8 @@ Your results should include:
 
 - Rong et al. used an intermediate group-specific template during normalization. This step can control normalization error to some extent. Since constructing such templates was not covered in class, simply use a direct linear alignment to the MNI template.
 - Rong et al. filtered the data at 0.008 Hz highpass. Although it is possible to control the filter parameters using a `3dbandpass` or `3dFourier` step, you can stick to using the filtering approach of including regressors at the `3dDeconvolve` stage. Using `-polort 4` will give a highpass filter of ~0.007 Hz. We can only hope that the critical signal is not inside the .001 Hz gap.
+- No behavioral data is included, so ignore the step of adding covariates into the model.
+- There is an inconsistency between the onsets in the timing files and what is described in the methods. You can decide which is more reliable. Subject 301 clearly deviates from the protocol and can be excluded for simplicity.
 
 ## Option 2: Reproduce Pernet et al. (2015)
 
